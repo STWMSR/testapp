@@ -5,6 +5,4 @@ void main(){
   print("10 year old");
   print("euro");
   print("lol");
-  print("deemak");
-  print("yaaa");
 }
