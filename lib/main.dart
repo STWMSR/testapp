@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/index.dart';
+
+
+
+import 'config/constant.dart';
+import 'screen/login.dart';
+import 'screen/register.dart';
+import 'index.dart';
 void main() {
   runApp(Myapp());
 }
-
 class Myapp extends StatelessWidget {
-    @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'KMUTNB',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        primaryColor: pColor,
+        secondaryHeaderColor: sColor,
+      ),
+      routes: {
+        'login': (context) => Login(),
+        'register': (context) => Register(),
+      },
       home: Myhome(),
     );
+    }
   }
-}
+
