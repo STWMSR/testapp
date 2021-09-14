@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'config/constant.dart';
+import 'constant.dart';
 
 class Myhome extends StatelessWidget {
   @override

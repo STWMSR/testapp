@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-
-import 'config/constant.dart';
+import 'constant.dart';
 import 'screen/login.dart';
 import 'screen/register.dart';
 import 'index.dart';
