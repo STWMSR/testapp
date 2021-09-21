@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'constant.dart';
 import 'screen/login.dart';
+import 'package:testapp/screen/dashboard.dart';
 import 'screen/register.dart';
 import 'index.dart';
 void main() {
@@ -17,6 +18,7 @@ class Myapp extends StatelessWidget {
       routes: {
         'login': (context) => Login(),
         'register': (context) => Register(),
+        'dashboard': (context) => Dashboard(),
       },
       home: Myhome(),
     );
