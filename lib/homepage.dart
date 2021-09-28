@@ -15,16 +15,17 @@ class Homepage extends StatelessWidget {
           alignment: Alignment.center,
           // width: 200,
           // height: 1000,
-          child: stack(
-            top: 20,
-            right: 200,
-            children: [
-              Positioned(
+          child: Stack(
+            
+            children: [              
+              Positioned(                 top: 20,                 left: 20,
               child: Text(
                 'Data1',
                 style: TextStyle(
-                  fontsize: 48,
+                  fontSize: 48,
                 ),
+              ),
+              ),
               ],
           ),
         ),
