@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:testapp/model/activity.dart';
@@ -43,10 +44,95 @@ class _DashboardState extends State<Dashboard> {
     });
   }
 
+Future<void> logout () async {
+  await FirebaseAuth.instance.signOut();
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text('Menu Package'), 
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  ),
+              ),
+              ListTile(
+                title: Text(
+                  'Video',
+                  style: TextStyle(
+                    fontSize: 24
+                  ),
+                ),
+                leading: Icon(Icons.video_call),
+                onTap: (){
+                  print('Menu Video');
+                  Navigator.pushNamed(context, 'video');
+                },
+                ),
+                ListTile(
+                title: Text(
+                  'Image',
+                  style: TextStyle(
+                    fontSize: 24
+                  ),
+                ),
+                leading: Icon(Icons.image),
+                onTap: (){
+                  print('Menu Image');
+                  Navigator.pushNamed(context, 'image');
+                },
+                ),
+                ListTile(
+                title: Text(
+                  'GPS',
+                  style: TextStyle(
+                    fontSize: 24
+                  ),
+                ),
+                leading: Icon(Icons.map),
+                onTap: (){
+                  print('Menu GPS');
+                  Navigator.pushNamed(context, 'location');
+                },
+                ),
+                ListTile(
+                title: Text(
+                  'Store',
+                  style: TextStyle(
+                    fontSize: 24
+                  ),
+                ),
+                leading: Icon(Icons.store),
+                onTap: (){
+                  print('Menu Store');
+                  Navigator.pushNamed(context, 'store');
+                },
+                ),
+                ListTile(
+                title: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontSize: 24
+                  ),
+                ),
+                leading: Icon(Icons.exit_to_app),
+                onTap: (){
+                  print('Menu Logout');
+                  logout();
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, 'login');
+                },
+                ),
+                
+            ],
+            ),
+          ),
         appBar: AppBar(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
